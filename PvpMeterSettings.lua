@@ -12,7 +12,7 @@ local panelDuel = {
 	}
 
 local optionsDuel = {
-	
+
 	[1] = {
 		type = "header",
 		name = "Cyrodiil & Battlegrounds",
@@ -23,49 +23,49 @@ local optionsDuel = {
 		tooltip = "Show Meter in BG/Cyrodiil",
 		default = true,
 		getFunc = function() return PvpMeter.savedVariables.showBeautifulMeter end,
-		setFunc = function(val) PvpMeter.savedVariables.showBeautifulMeter = val 
-		
+		setFunc = function(val) PvpMeter.savedVariables.showBeautifulMeter = val
+
 			if(val)then
 				--HUDTelvarMeter_show()
 			else
 				--HUDTelvarMeter_hide()
 			end
-		
-		
+
+
 		end,
 	},
-	
+
 	[3] = {
 		type = "checkbox",
 		name = "Auto accept queue",
 		tooltip = "Auto accept queue for BG & Cyrodiil",
 		default = true,
 		getFunc = function() return PvpMeter.savedVariables.autoqueue end,
-		setFunc = function(val) PvpMeter.savedVariables.autoqueue = val 
-		
-			
-		
+		setFunc = function(val) PvpMeter.savedVariables.autoqueue = val
+
+
+
 		end,
 	},
-	
+
 	[4] = {
 		type = "checkbox",
 		name = "Show button for cyrodiil queue in the chat ",
 		tooltip = "nutton of guest campaign and home campaign",
 		default = true,
 		getFunc = function() return PvpMeter.savedVariables.quickButton end,
-		setFunc = function(val) PvpMeter.savedVariables.quickButton = val 
-			PvpMeter.updateButtonQuick() 
-		
+		setFunc = function(val) PvpMeter.savedVariables.quickButton = val
+			PvpMeter.updateButtonQuick()
+
 		end,
 	},
 	[5] = {
 		type = "dropdown",
 		name = "Meter Rotation", -- or string id or function returning a string
 		choices = {"Bot-Right", "Bot-Left", "Top-Left","Top-Right"},
-		choicesValues = {1, 2, 3, 4 }, 
+		choicesValues = {1, 2, 3, 4 },
 		getFunc = function() return PvpMeter.savedVariables.rotation end,
-		setFunc = function(var) PvpMeter.savedVariables.rotation = var 
+		setFunc = function(var) PvpMeter.savedVariables.rotation = var
 			PvpMeter.rotateMeter(var)
 		end,
 	},
@@ -89,7 +89,7 @@ local optionsDuel = {
 		type = "dropdown",
 		name = "Choice kill sound", -- or string id or function returning a string
 		choices = {"LOCKPICKING_SUCCESS_CELEBRATION", "EMPEROR_CORONATED_EBONHEART"},
-		choicesValues = {0, 1, }, 
+		choicesValues = {0, 1, },
 		getFunc = function() return PvpMeter.savedVariables.nbrSound end,
 		setFunc = function(var) PvpMeter.savedVariables.nbrSound = var  end,
 	},
@@ -113,7 +113,7 @@ local optionsDuel = {
 		tooltip = "Show assist in BG",
 		default = true,
 		getFunc = function() return PvpMeter.savedVariables.BGAssist end,
-		setFunc = function(val) PvpMeter.savedVariables.BGAssist = val 
+		setFunc = function(val) PvpMeter.savedVariables.BGAssist = val
 			if(val and PvpMeter.inBG)then
 				LabelAssist:SetHidden(false)
 			else
@@ -127,7 +127,7 @@ local optionsDuel = {
 		tooltip = "show just AP of the current session",
 		default = true,
 		getFunc = function() return PvpMeter.savedVariables.currAP end,
-		setFunc = function(val) PvpMeter.savedVariables.currAP = val 
+		setFunc = function(val) PvpMeter.savedVariables.currAP = val
 			PvpMeter.updateAP()
 		end,
 	},
@@ -135,9 +135,9 @@ local optionsDuel = {
 		type = "dropdown",
 		name = "Cyrodiil meter bar", -- or string id or function returning a string
 		choices = {"Percentage of keeps capture","Xp progress to next pvp level"},
-		choicesValues = {0, 2}, 
+		choicesValues = {0, 2},
 		getFunc = function() return PvpMeter.savedVariables.nbrCyro end,
-		setFunc = function(var) PvpMeter.savedVariables.nbrCyro = var  
+		setFunc = function(var) PvpMeter.savedVariables.nbrCyro = var
 								PvpMeter.updateMeter()
 		end,
 	},
@@ -194,11 +194,11 @@ local optionsDuel = {
 }
 
 
-function PvpMeter.initSettings() 
-	local LAM = LibStub:GetLibrary("LibAddonMenu-2.0")
-	LAM:RegisterAddonPanel("IHateYou", panelDuel)
-	
-	
-	LAM:RegisterOptionControls("IHateYou", optionsDuel)
+function PvpMeter.initSettings()
+	local LAM = LibAddonMenu2
+	LAM:RegisterAddonPanel("PvpMeter_Menu", panelDuel)
+
+
+	LAM:RegisterOptionControls("PvpMeter_Menu", optionsDuel)
 end
 

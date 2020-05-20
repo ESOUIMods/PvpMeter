@@ -1,4 +1,4 @@
-local LMM = LibStub("LibMainMenu")
+local LMM = LibMainMenu
 
 MenuPvpMeter = {}
 
