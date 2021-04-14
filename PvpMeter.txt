@@ -1,29 +1,19 @@
 ## Title: PvP Meter
-## Version: 2.38
-## AddOnVersion: 238
+## Version: 2.4.2
+## AddOnVersion: 242
 ## SavedVariables: PvpMeterSavedVariables
-## APIVersion: 100027
-## Author: marig63
-## DependsOn: LibAddonMenu-2.0 LibMainMenu>=8
+## APIVersion: 100033 100034
+## Author: |cFFC300@amuridee|r, Baertram, marig63
+## DependsOn: LibAddonMenu-2.0 LibMainMenu-2.0
 
 meter.lua
 menuMeter.lua
 duelMeter.lua
-
 ScrollListBG.lua
-
 PvpMeter.xml
-
-
-
 PvpMeterMenu.lua
 PvpMeterBGMenu.lua
 PvpMeterDuelMenu.lua
-
 PvpMeter.lua
 PvpMeterSettings.lua
-
-
 Bindings.xml
-
-

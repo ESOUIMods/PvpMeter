@@ -1,13 +1,12 @@
-
+local LAM = LibAddonMenu2
 
 local panelDuel = {
 	type = "panel",
 	name = "PvP Meter",
 	displayName = "PvP Meter",
-	author = "marig63",
-	version = "2.38",
+	author = "@amuridee, marig63",
+	version = "2.42",
 	registerForDefaults = true,
-			--version = ADDON_VERSION,
 	slashCommand = "/pvpmeter",
 	}
 
@@ -195,10 +194,7 @@ local optionsDuel = {
 
 
 function PvpMeter.initSettings()
-	local LAM = LibAddonMenu2
 	LAM:RegisterAddonPanel("PvpMeter_Menu", panelDuel)
-
-
 	LAM:RegisterOptionControls("PvpMeter_Menu", optionsDuel)
 end
 

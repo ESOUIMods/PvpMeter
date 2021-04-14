@@ -1,4 +1,4 @@
-local LMM = LibMainMenu
+local LMM = LibMainMenu2
 
 MenuPvpMeter = {}
 
@@ -6,8 +6,8 @@ function MenuPvpMeter:Initialize()
 	-- Set Title
 	ZO_CreateStringId("SI_BINDING_NAME_PVPMETER_SHOW_PANEL","Open PvP Meter")
 	ZO_CreateStringId("SI_PVPMETER_MAIN_MENU_TITLE", "Pvp Meter")
-	
-	
+
+
 	-- button data for the main menu (top bar with inventory, map, journal etc)
 	self.BASE_MENU_DATA =
 	{
@@ -22,13 +22,13 @@ function MenuPvpMeter:Initialize()
 			self:Show(viaButton) -- the top bar button was pressed (i.e. not the keybind), show the scene
 		end,
 	}
-	
-	
-	
-	
-	
+
+
+
+
+
 	self.BASE_MENU = LMM:AddCategory(self.BASE_MENU_DATA)
-	
+
 	self.iconData = {}
 	self.scenes = {}
 end
@@ -62,7 +62,7 @@ end
 -- display the menu
 function MenuPvpMeter:Show(viaButton)
 	if not self.sceneGroup:IsShowing() then
-	
+
 		LMM:ToggleCategory(self.BASE_MENU, viaButton)
 	end
 end
@@ -71,10 +71,10 @@ end
 -- toggles the menu
 function MenuPvpMeter:Toggle(viaButton)
 	--d("test")
-	
+
 	if(PvpMeter.savedVariables.hideMenu==false) then return end
-	
-	
+
+
 	LMM:ToggleCategory(self.BASE_MENU)
 	if not viaButton then
 		-- when opening the menu via the keybind, we have to reset the main menu buttons
@@ -84,10 +84,10 @@ end
 
 function MenuPvpMeter.SwitchageAffichage()
 
-	
+
 	if(SCENE_MANAGER:IsShowing("PvpmeterduelScene"))then
-	
-	
+
+
 		--DuelPvpMeter.show()
 		--set button
 		--LMM:ToggleCategory(MenuPvpMeter.BASE_MENU, true)
@@ -103,6 +103,6 @@ function MenuPvpMeter.SwitchageAffichage()
 		--BGPvpMeter.hide()
 	end
 
-	
-	
+
+
 end
